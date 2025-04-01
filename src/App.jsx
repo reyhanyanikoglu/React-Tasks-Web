@@ -18,11 +18,16 @@ function App() {
     setTasks(createdTasks);
   }
 
+  const deleteTaskByID = (id) => { // id ye sahip olanı arrayden çıkar
+      const updatedTasks = tasks.filter((task) => task.id !== id); // id silinmeyecekleri filtreler
+      setTasks(updatedTasks);
+  }
+
   return (
     <div className='App'>
       <TaskCreate onCreate={createTask}/>
       <h1>Görevler</h1>
-      <TaskList tasks={tasks}/>
+      <TaskList tasks={tasks} onDelete={deleteTaskByID}/>
     </div>
   )
 }

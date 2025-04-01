@@ -65,6 +65,7 @@
   background-color: red;
   color: aliceblue;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .update-button {
@@ -75,5 +76,6 @@
   border-radius: 30px;
   background-color: blue;
   color: aliceblue;
+  cursor: pointer;
 }
 
