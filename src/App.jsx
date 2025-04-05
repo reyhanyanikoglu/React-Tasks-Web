@@ -23,11 +23,21 @@ function App() {
       setTasks(updatedTasks);
   }
 
+  const editTaskById = (id,updatedTitle,uptadedTaskDesc) => { // task listesini dönücez bana güncellenecek id geliyor o id yi bulup değiştircez
+    const uptadedTasks = tasks.map((task) => {
+      if(task.id === id) {
+        return {id, title:updatedTitle, taskDesc:uptadedTaskDesc}
+      }
+      return task
+    });
+    setTasks(uptadedTasks)
+  }
+
   return (
     <div className='App'>
       <TaskCreate onCreate={createTask}/>
       <h1>Görevler</h1>
-      <TaskList tasks={tasks} onDelete={deleteTaskByID}/>
+      <TaskList tasks={tasks} onDelete={deleteTaskByID} onUpdate={editTaskById}/>
     </div>
   )
 }
